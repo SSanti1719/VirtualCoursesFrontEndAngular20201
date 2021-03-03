@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        
+        <form [formGroup]="fgValidator">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input formControlName="code" name="code" class="form-control" placeholder="Code" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input formControlName="document" name="document" class="form-control" placeholder="Document" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input formControlName="name" name="name" class="form-control" placeholder="Name" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                 </div>
+                <input formControlName="lastname" name="lastName" class="form-control" placeholder="Last Name" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input formControlName="email" name="email" class="form-control" placeholder="Email address" type="email">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <select formControlName="countryCode" class="custom-select" style="max-width: 120px;">
+                <option selected="" value="+57">+57</option>
+                <option value="+36">+36</option>
+                <option value="+198">+198</option>
+            </select>
+            <input formControlName="cellphone" name="" class="form-control" placeholder="Phone number" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+            </div>
+            <select formControlName="career" class="form-control">
+                <option selected=""> Select Career</option>
+                <option value="Designer">Designer</option>
+                <option value="Manager">Manager</option>
+                <option value="Accaunting">Accaunting</option>
+                <option value="Systems and Computing Engineering">Systems and Computing Engineering</option>
+            </select>
+        </div> <!-- form-group end.// -->
+         <!-- form-group// -->                                      
+        <div class="form-group">
+            <button type="button" (click)="StudentRegister()" class="btn btn-primary btn-block"> Create Account  </button>
+        </div> <!-- form-group// -->      
+        <p class="text-center">Have an account? <a routerLink="/security/login">Log In</a> </p>                                                                 
+    </form>
+    </article>
+    </div> <!-- card.// -->
+    
