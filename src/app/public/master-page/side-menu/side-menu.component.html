@@ -1,1 +1,37 @@
-<p>side-menu works!</p>
+<div id="wrapper" class="toggled">
+
+    <!-- Sidebar -->
+    <div *ngIf="isLogged" id="sidebar-wrapper" >
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a routerLink="/home">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a *ngIf="role==2" routerLink="/parameters/area">Area</a>
+            </li>
+            <li>
+                <a *ngIf="role==2" routerLink="/parameters/faculty">Faculty</a>
+            </li>
+            <li>
+                <a routerLink="">Overview</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <router-outlet>
+
+            </router-outlet>
+        </div>
+    </div>
+    <app-footer>
+
+    </app-footer>
+    <!-- /#page-content-wrapper -->
+
+</div>

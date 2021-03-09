@@ -19,6 +19,9 @@ const routes: Routes = [
   {
     path:'students',
     loadChildren: () => import ('./modules/students/students.module').then(n=>n.StudentsModule)
+  },{
+    path:'parameters',
+    loadChildren: () => import ('./modules/parameters/parameters.module').then(n=>n.ParametersModule)
   },
 
   //This option always may be at the end
