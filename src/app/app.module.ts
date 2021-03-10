@@ -10,6 +10,8 @@ import { HeroComponent } from './public/master-page/hero/hero.component';
 import { FooterComponent } from './public/master-page/footer/footer.component';
 import { AreaCreationComponent } from './modules/parameters/area/area-creation/area-creation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AreaListComponent } from './modules/parameters/area/area-list/area-list.component';
+import { ParametersModule } from './modules/parameters/parameters.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     SideMenuComponent,
     HeroComponent,
-    FooterComponent,
-    AreaCreationComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

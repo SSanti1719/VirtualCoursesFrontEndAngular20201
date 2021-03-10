@@ -73,4 +73,9 @@ this.verifyActiveSession()
     localStorage.removeItem('session');
     this.setUserData(new UserModel());
   }
+
+  getToken():String{
+    let currentSession=this.getSession();
+    return JSON.parse(currentSession).token;
+  }
 }

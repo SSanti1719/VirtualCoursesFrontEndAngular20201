@@ -21,7 +21,7 @@ const routes: Routes = [
     component: AreaCreationComponent
   },
   {
-    path:'area-creation',
+    path:'area-edition/:id',
     component: AreaEditionComponent
   },
   {
