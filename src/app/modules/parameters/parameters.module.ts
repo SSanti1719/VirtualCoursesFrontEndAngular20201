@@ -13,13 +13,20 @@ import { FacultyCreationComponent } from './faculty/faculty-creation/faculty-cre
 import { FacultyEditionComponent } from './faculty/faculty-edition/faculty-edition.component';
 import { FacultyListComponent } from './faculty/faculty-list/faculty-list.component';
 import { AreaCreationComponent } from './area/area-creation/area-creation.component';
+import {NgxPaginationModule} from 'ngx-pagination'
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AreaCreationComponent, AreaEditionComponent, AreaListComponent, AreaRemoveComponent, CourseCreationComponent, CourseEditionComponent, CourseListComponent, FacultyCreationComponent, FacultyEditionComponent, FacultyListComponent],
   imports: [
     CommonModule,
-    ParametersRoutingModule
+    ParametersRoutingModule,
+    NgxPaginationModule,
+    NgxSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametersModule { }

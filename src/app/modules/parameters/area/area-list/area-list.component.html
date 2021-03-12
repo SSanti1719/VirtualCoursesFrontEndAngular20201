@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let r of recordList">
+        <tr *ngFor="let r of recordList  | paginate:{itemsPerPage:3,currentPage:page}">
             <td>
                 {{r.code}}
             </td>
@@ -30,13 +30,13 @@
                 <a class="btn btn-warning" routerLink="/parameters/area-edition/{{r.id}}" role="button">Edit</a>
             </td>
             <td>
-               <button type="button" class="btn btn-danger" (click)="RemoveRecordConfirmation('r.id')">Delete</button>
+               <button type="button" class="btn btn-danger" (click)="RemoveRecordConfirmation(r.id)">Delete</button>
             </td>
         </tr>
     </tbody>
 </table>
-
-
+<pagination-controls (pageChange)="page=$event">=</pagination-controls>
+<ngx-spinner></ngx-spinner>
 <div class="modal" id="removeConfirmationModal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -56,3 +56,6 @@
       </div>
     </div>
   </div>
+
+
+ 
