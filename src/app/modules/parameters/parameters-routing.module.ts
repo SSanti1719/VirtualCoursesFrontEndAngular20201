@@ -38,7 +38,7 @@ const routes: Routes = [
     component: FacultyCreationComponent
   },
   {
-    path:'faculty-edition',
+    path:'faculty-edition/:id',
     component: FacultyEditionComponent
   },
   {
