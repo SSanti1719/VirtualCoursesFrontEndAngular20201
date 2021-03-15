@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ServiceConfig } from '../config/service.config';
 import { StudentModel } from '../models/student.model';
-import { UserModel } from '../models/user.model';
+import { UserModel } from '../models/security/user.model';
+import { ResetPasswordComponent } from '../modules/security/reset-password/reset-password.component';
+import { ResetPasswordModel } from '../models/security/reset-password.model';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +45,13 @@ this.verifyActiveSession()
       })
     })
   }
+ResetPassword(model:ResetPasswordModel):Observable<Boolean>{
+  return this.http.post<Boolean>(`${ServiceConfig.BASE_URL}password-reset`, model, {
+    headers: new HttpHeaders({
+
+    })
+  })
+}
 
   saveSession(sessionData: any): Boolean {
     let currentSession = localStorage.getItem('session');
@@ -67,6 +76,17 @@ this.verifyActiveSession()
   getSession() {
     let currentSession = localStorage.getItem('session');
     return currentSession;
+  }
+
+  sessionExists():Boolean{
+    return (this.getSession()) ? true : false;
+  }
+
+
+  isUserRol(roleId):Boolean{
+    let currentSession=this.getSession();
+    return JSON.parse(currentSession).rol == roleId;
+ 
   }
 
   Logout(){

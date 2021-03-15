@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
 import { FormsConfig } from 'src/app/config/forms-config'
 import { SecurityService } from 'src/app/services/security.service';
-import { UserModel } from 'src/app/models/user.model';
+import { UserModel } from 'src/app/models/security/user.model';
 import MD5 from 'crypto-js/md5'
 
 
