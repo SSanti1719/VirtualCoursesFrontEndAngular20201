@@ -6,6 +6,7 @@ import { StudentModel } from '../models/student.model';
 import { UserModel } from '../models/security/user.model';
 import { ResetPasswordComponent } from '../modules/security/reset-password/reset-password.component';
 import { ResetPasswordModel } from '../models/security/reset-password.model';
+import { ChangePasswordModel } from '../models/security/change-password.model';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +50,16 @@ ResetPassword(model:ResetPasswordModel):Observable<Boolean>{
   return this.http.post<Boolean>(`${ServiceConfig.BASE_URL}password-reset`, model, {
     headers: new HttpHeaders({
 
+    })
+  })
+}
+
+ChangePassword(model:ChangePasswordModel):Observable<Boolean>{
+  console.log(model);
+  
+  return this.http.post<Boolean>(`${ServiceConfig.BASE_URL}change-password`, model, {
+    headers: new HttpHeaders({
+      Authorization:`Bearer ${this.getToken()}`
     })
   })
 }
@@ -97,5 +108,9 @@ ResetPassword(model:ResetPasswordModel):Observable<Boolean>{
   getToken():String{
     let currentSession=this.getSession();
     return JSON.parse(currentSession).token;
+  }
+  getUserId():String{
+    let currentSession=this.getSession();
+    return JSON.parse(currentSession).id;
   }
 }
